@@ -1,0 +1,3 @@
+event: stream-data
+data: {"alerts":[],"unreachable_nodes":[]}
+
