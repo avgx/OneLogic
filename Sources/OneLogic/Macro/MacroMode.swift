@@ -1,8 +1,8 @@
 import Foundation
 
-public struct MacroModeCommon: Decodable, Equatable, Sendable {}
+public struct MacroModeCommon: Codable, Equatable, Sendable {}
 
-public struct MacroModeTimeZone: Decodable, Equatable, Sendable {
+public struct MacroModeTimeZone: Codable, Equatable, Sendable {
     public let timezoneId: String
 
     private enum CodingKeys: String, CodingKey {
@@ -10,7 +10,7 @@ public struct MacroModeTimeZone: Decodable, Equatable, Sendable {
     }
 }
 
-public struct MacroModeAutorule: Decodable, Equatable, Sendable {
+public struct MacroModeAutorule: Codable, Equatable, Sendable {
     public let zoneAp: AccessPoint
     public let onlyIfArmed: Bool?
     public let timezoneId: String?
@@ -22,7 +22,7 @@ public struct MacroModeAutorule: Decodable, Equatable, Sendable {
     }
 }
 
-public struct MacroModeContinuous: Decodable, Equatable, Sendable {
+public struct MacroModeContinuous: Codable, Equatable, Sendable {
     public let server: String?
     public let timezoneId: String?
     public let heartbeatMs: Int?
@@ -37,7 +37,7 @@ public struct MacroModeContinuous: Decodable, Equatable, Sendable {
 }
 
 /// Stripped macro mode (`MacroMode` in `Macro.proto`).
-public struct MacroMode: Decodable, Equatable, Sendable {
+public struct MacroMode: Codable, Equatable, Sendable {
     public let enabled: Bool
     public let userRole: String?
     public let isAddToMenu: Bool?

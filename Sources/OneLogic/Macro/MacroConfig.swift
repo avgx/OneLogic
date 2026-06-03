@@ -1,9 +1,11 @@
 import Foundation
 
-public struct MacroConfig: Decodable, Equatable, Sendable {
+public struct MacroConfig: Codable, Equatable, Identifiable, Sendable {
     public let guid: String
     public let name: String
     public let mode: MacroMode
+    
+    public var id: String { guid }
 }
 
 public struct ListMacrosResponse: Decodable, Equatable, Sendable {
